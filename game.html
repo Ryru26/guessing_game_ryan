@@ -1,28 +1,31 @@
 <script>
-var guess, answer, message;
+var guess, answer, message, counter;
 
-  guess = prompt("Can you guess how many concerts I have I been to in 2015?");
-      console.log("The user guessed + guess");
+guess = prompt("Can you guess how many concerts I have been to in 2015?");
+console.log("The user guessed + guess");
 
-      answer = 3;
-      console.log("The correct answer is " + 3);
+answer = 3;
+console.log("The correct answer is " + 3);
+counter = 1;
 
-  if (guess == answer){
-    message = "You must have gone to the shows with me!"
-  }else{
-    message = "You aren't my real friend!"
+// Make the user keep guessing until they get it right or exhausted their three tries.
+while (guess != answer && counter <= 3) {
+  if (guess <= 2) {
+    guess = prompt("I pity the fool that would guess that low!  Guess again!");
+    } else if (guess >= 4) {
+    guess = prompt("Ain't nobody got time for that many concerts!  Guess again!");
+    }
+  counter+=1; 
+}
 
-  }
+// If the while loop ended because of number of tries, give the failure message.  Otherwise give the success message.
+if (counter >4) {
+  message = "You aren't my real friend.  You don't know me at all!";
+} else {
+  message = "It only took you " + counter + " guesses! You must have gone to some shows with me. Thanks, friend!";
+}
 
-  alert(message);
-
-
-
-
-
-
-
-
+alert(message);
 
 
 </script>
