@@ -1,0 +1,10 @@
+var Game = function() {
+  this.answer;
+  this.number of guesses;
+}
+
+function totalGuess() {
+  for ( i=0; i< 100; i++){
+  console.log(i);
+  }
+}
