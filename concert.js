@@ -1,5 +1,5 @@
 
-<script>
+
 
 var Game = function(answer) {
   this.concerts = answer.length;
@@ -28,10 +28,13 @@ var Game = function(answer) {
   alert("You aren't my real friend.  You don't know me at all!");
 
   } else {
-  alert("It only took you " + this.counter + " guesses! You must have gone to some shows with me. Here's who I saw: ");
+  var el = document.getElementById("win");
+  el.innerHTML = "It only took you " + this.counter + " guesses! You must have gone to some shows with me. Here's who I saw: ";
 
   for  (var i = 0;i<answer.length;i++) {
-    alert(answer[i]);
+    var el2 = document.getElementById ("bands");
+    el2.innerHTML = answer + "<p> Maybe you can find one he went to at livenation.<a href= \"http://www.livenation.com/\"> Search for shows he might have been to</a></p>";
+
   }
   }
 }
@@ -48,5 +51,5 @@ var game5 = new Game(["Metallica", "Red Hot Chili Peppers","311","Melvins"])
 game5.run();
 
 
-</script>
+
 
